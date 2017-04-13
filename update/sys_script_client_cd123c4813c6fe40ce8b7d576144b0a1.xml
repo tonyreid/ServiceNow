@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Check for DB script attachment</description>
+        <field>active</field>
+        <global>true</global>
+        <messages/>
+        <name>DB scripts required</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+	//Type appropriate comment here, and begin script below
+	
+	var ccsx_sys_id = g_form.getUniqueValue();
+	//alert(ccsx_sys_id);
+	var ga = new GlideAjax('AttachmentUtilAjax');
+	ga.addParam('sysparm_name','hasAttachments');
+	ga.addParam('sysparm_id',ccsx_sys_id);
+	ga.getXMLWait();
+	var answer = ga.getAnswer();
+	if(answer == 'false' && g_form.getValue('database_changes') == 'yes'){
+		var dialog = new GlideDialogWindow('attachment'); //Render the dialog containing the UI Page 'terms_and_conditions_dialog'
+		dialog.render(); //Open the dialog
+	}
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-04-05 20:03:41</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cd123c4813c6fe40ce8b7d576144b0a1</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>DB scripts required</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sys_script_client_cd123c4813c6fe40ce8b7d576144b0a1</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-04-11 16:41:21</sys_updated_on>
+        <table>x_prole_software_c_software_change_request_table</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_prole_software_c_software_change_request_table" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="x_prole_software_c_software_change_request_table" element="NULL" name="x_prole_software_c_software_change_request_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1fb1740813c6fe40ce8b7d576144b07b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-05 19:45:34</sys_created_on>
+            <sys_id>97b1740813c6fe40ce8b7d576144b07c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-05 19:45:34</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>status</element>
+            <list_id display_value="x_prole_software_c_software_change_request_table" element="NULL" name="x_prole_software_c_software_change_request_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1fb1740813c6fe40ce8b7d576144b07b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-05 19:45:34</sys_created_on>
+            <sys_id>1fb1740813c6fe40ce8b7d576144b07c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-05 19:45:34</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>priority</element>
+            <list_id display_value="x_prole_software_c_software_change_request_table" element="NULL" name="x_prole_software_c_software_change_request_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1fb1740813c6fe40ce8b7d576144b07b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-05 19:45:34</sys_created_on>
+            <sys_id>9fb1740813c6fe40ce8b7d576144b07c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-05 19:45:34</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>short_description</element>
+            <list_id display_value="x_prole_software_c_software_change_request_table" element="NULL" name="x_prole_software_c_software_change_request_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1fb1740813c6fe40ce8b7d576144b07b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-05 19:45:34</sys_created_on>
+            <sys_id>13b1740813c6fe40ce8b7d576144b07d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-05 19:45:34</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>category</element>
+            <list_id display_value="x_prole_software_c_software_change_request_table" element="NULL" name="x_prole_software_c_software_change_request_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1fb1740813c6fe40ce8b7d576144b07b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-05 19:45:34</sys_created_on>
+            <sys_id>93b1740813c6fe40ce8b7d576144b07d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-05 19:45:34</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>change_type</element>
+            <list_id display_value="x_prole_software_c_software_change_request_table" element="NULL" name="x_prole_software_c_software_change_request_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1fb1740813c6fe40ce8b7d576144b07b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-05 19:45:34</sys_created_on>
+            <sys_id>17b1740813c6fe40ce8b7d576144b07d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-05 19:45:34</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>rc_branch</element>
+            <list_id display_value="x_prole_software_c_software_change_request_table" element="NULL" name="x_prole_software_c_software_change_request_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">1fb1740813c6fe40ce8b7d576144b07b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-05 19:45:34</sys_created_on>
+            <sys_id>97b1740813c6fe40ce8b7d576144b07d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-05 19:45:34</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_prole_software_c_software_change_request_table</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-05 19:45:34</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1fb1740813c6fe40ce8b7d576144b07b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_prole_software_c_software_change_request_table</sys_name>
+            <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+            <sys_update_name>sys_ui_list_x_prole_software_c_software_change_request_table_null</sys_update_name>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-05 19:45:34</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

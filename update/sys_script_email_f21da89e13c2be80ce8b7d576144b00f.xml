@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>ccsx_body_header</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(current, template, email, email_action, event) {
+	template.print('<p><font size="6" color="#808080" face="helvetica">');
+	template.print('${number} - ' + gs.getMessage('${short_description}'));
+	template.print('</font></p>');
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-04-12 19:12:05</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>f21da89e13c2be80ce8b7d576144b00f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ccsx_body_header</sys_name>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sys_script_email_f21da89e13c2be80ce8b7d576144b00f</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-04-12 19:12:05</sys_updated_on>
+    </sys_script_email>
+</record_update>

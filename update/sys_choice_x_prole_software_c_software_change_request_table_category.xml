@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="category" table="x_prole_software_c_software_change_request_table" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Data Change</label>
+            <language>en</language>
+            <name>x_prole_software_c_software_change_request_table</name>
+            <sequence>10</sequence>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 19:36:04</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e95c9a571375fa40ce8b7d576144b0b8</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 19:36:10</sys_updated_on>
+            <value>data</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>normal</dependent_value>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Data Change Accounting</label>
+            <language>en</language>
+            <name>x_prole_software_c_software_change_request_table</name>
+            <sequence>20</sequence>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 19:36:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ec6cde571375fa40ce8b7d576144b062</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 19:40:30</sys_updated_on>
+            <value>data_accounting</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Software Change</label>
+            <language>en</language>
+            <name>x_prole_software_c_software_change_request_table</name>
+            <sequence>30</sequence>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 19:36:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>607c96971375fa40ce8b7d576144b092</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 19:36:46</sys_updated_on>
+            <value>software</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Report</label>
+            <language>en</language>
+            <name>x_prole_software_c_software_change_request_table</name>
+            <sequence>40</sequence>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 19:36:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>298cd6971375fa40ce8b7d576144b05b</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 19:37:04</sys_updated_on>
+            <value>report</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>BI</label>
+            <language>en</language>
+            <name>x_prole_software_c_software_change_request_table</name>
+            <sequence>50</sequence>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 19:37:10</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>659c56971375fa40ce8b7d576144b0bf</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 19:37:14</sys_updated_on>
+            <value>bi</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>category</element>
+            <name>x_prole_software_c_software_change_request_table</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 19:36:04</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>206c12971375fa40ce8b7d576144b0ff</sys_id>
+            <sys_mod_count>16</sys_mod_count>
+            <sys_name>category</sys_name>
+            <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+            <sys_update_name>sys_choice_x_prole_software_c_software_change_request_table_category</sys_update_name>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 19:40:30</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

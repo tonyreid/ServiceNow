@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_related sys_domain="global" table="x_prole_software_c_software_change_request_table" version="2" view="">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Software Change Request - Default view" name="x_prole_software_c_software_change_request_table" related_list="NULL" sys_domain="global" view="Default view">c1e0e81a1382be80ce8b7d576144b099</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>REL:55cb1c1e1342be80ce8b7d576144b0ef</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-12 18:18:18</sys_created_on>
+            <sys_id>8de0e81a1382be80ce8b7d576144b099</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-12 18:18:18</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Software Change Request - Default view" name="x_prole_software_c_software_change_request_table" related_list="NULL" sys_domain="global" view="Default view">c1e0e81a1382be80ce8b7d576144b099</list_id>
+            <order_by/>
+            <position>1</position>
+            <related_list>x_prole_software_c_software_change_task.parent</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-12 18:18:18</sys_created_on>
+            <sys_id>85e0e81a1382be80ce8b7d576144b09a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-12 18:18:18</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Software Change Request - Default view</calculated_name>
+            <filter/>
+            <name>x_prole_software_c_software_change_request_table</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-12 18:18:18</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c1e0e81a1382be80ce8b7d576144b099</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Software Change Request - Default view</sys_name>
+            <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+            <sys_update_name>sys_ui_related_x_prole_software_c_software_change_request_table_null</sys_update_name>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-12 18:18:18</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

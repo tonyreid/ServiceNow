@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="Change Management" section_id="ffd3a25313b5fa40ce8b7d576144b016" sys_domain="global" table="x_prole_software_c_software_change_request_table" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>business_approval</element>
+            <position>0</position>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 20:14:13</sys_created_on>
+            <sys_id>9b1566d313b5fa40ce8b7d576144b0e5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Change Management" display_value="Change Management" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">ffd3a25313b5fa40ce8b7d576144b016</sys_ui_section>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 20:14:13</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>prod_deplyoment_notes</element>
+            <position>1</position>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 20:14:13</sys_created_on>
+            <sys_id>1f1566d313b5fa40ce8b7d576144b0e5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Change Management" display_value="Change Management" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">ffd3a25313b5fa40ce8b7d576144b016</sys_ui_section>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 20:14:13</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 20:14:13</sys_created_on>
+            <sys_id>9f1566d313b5fa40ce8b7d576144b0e5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Change Management" display_value="Change Management" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">ffd3a25313b5fa40ce8b7d576144b016</sys_ui_section>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 20:14:13</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>rc_deployments</element>
+            <position>3</position>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 20:14:13</sys_created_on>
+            <sys_id>131566d313b5fa40ce8b7d576144b0e6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Change Management" display_value="Change Management" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">ffd3a25313b5fa40ce8b7d576144b016</sys_ui_section>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 20:14:13</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>prod_deployment_issues</element>
+            <position>4</position>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 20:14:13</sys_created_on>
+            <sys_id>931566d313b5fa40ce8b7d576144b0e6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Change Management" display_value="Change Management" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">ffd3a25313b5fa40ce8b7d576144b016</sys_ui_section>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 20:14:13</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Change Management</caption>
+            <header>false</header>
+            <name>x_prole_software_c_software_change_request_table</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-03 20:08:48</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ffd3a25313b5fa40ce8b7d576144b016</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Change Management</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+            <sys_update_name>sys_ui_section_ffd3a25313b5fa40ce8b7d576144b016</sys_update_name>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-03 20:08:48</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

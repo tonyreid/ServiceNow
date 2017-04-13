@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <disabled>ignore</disabled>
+        <field>database_engineer</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-04-03 20:10:26</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>b034ee5313b5fa40ce8b7d576144b053</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>database_engineer</sys_name>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sys_ui_policy_action_b034ee5313b5fa40ce8b7d576144b053</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-04-03 20:10:26</sys_updated_on>
+        <table>x_prole_software_c_software_change_request_table</table>
+        <ui_policy display_value="Database">1514ea5313b5fa40ce8b7d576144b002</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+</record_update>

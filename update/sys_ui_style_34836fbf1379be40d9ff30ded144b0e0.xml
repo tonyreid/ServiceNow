@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_style">
+    <sys_ui_style action="INSERT_OR_UPDATE">
+        <element>status</element>
+        <name>x_prole_software_c_software_change_request_table</name>
+        <style>background-color:DarkKhaki</style>
+        <sys_class_name>sys_ui_style</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-04-05 14:03:48</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>34836fbf1379be40d9ff30ded144b0e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_prole_software_c_software_change_request_table</sys_name>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sys_ui_style_34836fbf1379be40d9ff30ded144b0e0</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-04-05 14:03:48</sys_updated_on>
+        <value>7</value>
+    </sys_ui_style>
+</record_update>

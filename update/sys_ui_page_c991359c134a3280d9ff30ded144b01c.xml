@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[/**
+ * Validate the attachments to see if at least
+ * one file is attached. Otherwise, show an alert.
+ * 
+ * @returns {Boolean}
+ */
+function validateAttachment() {
+	var form = $('sys_attachment');
+	var fileFields = form.select('.attachmentRow');
+	
+	for (var i = 0; i < fileFields.size(); i++) {
+		if (fileFields[i] && fileFields[i].value != "") {
+			setAttachButton(""); //disable
+			$('please_wait').style.display = "";
+			return true;
+		}
+	}
+	
+	alert("${JS:gs.getMessage('Choose a file to attach')}");
+    return false;
+}
+
+/**
+ * Does the first attachment input field have a value?
+ * If not, use the grey button and change type of cursor.
+ * @param value
+ */
+function setDeleteButton(value) {
+	var field = $$('.attachmentRow')[0];
+	var text = field.select('input')[0];
+	var deleteButton = field.select('a.attachfile-delete img')[0];
+	if (!text.getValue().empty()) {
+		deleteButton.setAttribute('src', 'images/icons/kb_no.gif');
+		deleteButton.up().style.cursor = 'pointer';
+	} else {
+		deleteButton.setAttribute('src', 'images/icons/kb_no_disabled.gif');
+		deleteButton.up().style.cursor = 'default';
+	}
+}
+
+
+/**
+ * If the value passed in is an empty string,
+ * set the button to disabled state, otherwise
+ * enabled.
+ *
+ * @param value
+ */
+function setAttachButton(value) {
+  var attachButton = $("attachButton");
+  if (value == "")
+    attachButton.disabled = "true";
+  else
+    attachButton.disabled = "";
+}
+
+/**
+ * This controls the remove button for all attachments.
+ * If there are attachments in the list enable the button.
+ * Else keep disabled.
+ *
+ * @param e
+ */
+function setRemoveButton(e) {
+  var removeButton = gel("removeButton");
+  var deletedSysIdsElement = gel("deleted_sys_ids");
+  var deletedSysIds = new Array();
+  var deletedString = deletedSysIdsElement.value;
+  if (deletedString)
+     deletedSysIds = deletedString.split(";");
+  var thisId = e.name.substring(7);
+  if (e.checked) {
+    removeButton.disabled = "";
+    deletedSysIds.push(thisId);
+  } else {
+    var index = deletedSysIds.indexOf(thisId);
+    deletedSysIds.splice(index, 1);
+
+    // are there any left checked?
+    var inputs = document.getElementsByTagName("input");
+    var nonechecked = true;
+    var i = 0;
+    while(i < inputs.length && nonechecked) {
+      if (inputs[i].type == "checkbox" && inputs[i].name.substring(0, 7) == "sys_id_")
+        if (inputs[i].checked)
+          nonechecked = false;
+        i++;
+    }
+    if (nonechecked) {
+      removeButton.disabled = "true";
+    }
+  }
+  deletedSysIds = deletedSysIds.join(";");
+  deletedSysIdsElement.value = deletedSysIds;
+}
+
+function startRemoveAttachments() {
+  var removeButton = gel("removeButton");
+  removeButton.disabled = true;
+  gel('please_wait').style.display = "";
+  var thisUrl = gel("sysparm_this_url");
+  thisUrl.value = "attachment_deleted.do?sysparm_domain_restore=false&sysparm_nostack=yes&sysparm_deleted=" + gel("deleted_sys_ids").value;
+  return true;
+}
+
+/**
+ * Clear and Remove the attachment field that is
+ * passed in.
+ *
+ * @param field_id
+ */
+function clearAttachmentField(field) {
+	var form = $('sys_attachment');
+	var fileFields = form.select('.attachmentRow');
+
+	fileFields[0].setAttribute('data-position', 'first');
+	if (fileFields.size() > 1 && (field.readAttribute('data-position') != "first")) {
+
+		//check if field you are removing has a 3rd column (does it have an attach button?)
+		var needToAttachButton;
+        var attachButton = field.select('td')[2];
+        if (attachButton)
+        	needToAttachButton = true;
+
+        //remove the field
+		field.remove();
+
+		//if you removed a field with a third column, add an attachbutton onto the new "first" field.
+		if (attachButton) {
+			var attachButton = new Element('input', {
+			   "type": "submit",
+			   "id": "attachButton",
+			   "disabled": "true",
+			   "value": "${gs.getMessage('Attach')}" });
+			var td = new Element('td', {align: 'right'}).update(attachButton);
+			Element.extend(td);
+			form.select('.attachmentRow').first().select('td')[1].insert({'after': td});
+		}
+	}
+	else
+		clearFileField(field.select('td').first().select('input').first());
+	checkAndSetAttachButton();
+}
+
+/**
+ * Check all attachment input fields. If there is not attachment
+ * currently, disable the attachment button, else enable it.
+ *
+ * @returns
+ */
+function checkAndSetAttachButton() {
+	var form = $('sys_attachment');
+	var fileFields = form.select('.attachmentRow');
+        var validFileCount = 0;
+	for (var i = 0; i < fileFields.size(); i++) {
+			var field = fileFields[i].select('td').first().select('input').first();
+			if (field.getValue() != "") {
+				if (window.File && window.FileReader && window.FileList)
+					validFileCount += validateSizeandExt(field);
+				else
+					validFileCount += 1;
+			}
+        }
+        if (validFileCount == 0)
+	        setAttachButton("");
+        else
+			setAttachButton("true");
+}
+
+function validateSizeandExt(field) {
+	var form = $('sys_attachment');
+	var maxSize = (form.max_size && form.max_size.value) ? form.max_size.value : 0;
+	var fileTypes = (form.file_types && form.file_types.value) ? form.file_types.value : "";
+	var files = field.files;
+	var allowedSize = maxSize * 1048576;
+        var warningString = "";
+	for (var i = 0; i < files.length; i++) {
+		if (files[i].size > allowedSize && allowedSize != 0)
+			warningString += files[i].name + "${JS:gs.getMessage(' is ')}" + getDisplaySize(files[i].size) + "${JS:gs.getMessage('. The maximum file size is ')}" + getDisplaySize(allowedSize) + ".\n";
+                if (!isValidFileType(files[i], fileTypes))
+                        warningString += files[i].name + "${JS:gs.getMessage(' has a prohibited file extension.')}" + "\n";
+
+	}
+        if (warningString != "") {
+                alert(warningString);
+                clearFileField(field);
+                return 0;
+        }
+
+        return 1;
+}
+
+function getDisplaySize(sizeInBytes) {
+	var kilobytes = Math.round(sizeInBytes / 1024);
+	if (kilobytes < 1)
+		kilobytes = 1;
+	var reportSize = kilobytes + "K";
+	if (kilobytes > 1024)
+		reportSize = Math.round(kilobytes / 1024) + "MB";
+	return reportSize;
+}
+
+function isValidFileType(file, types) {
+	var extensions = types || "";
+        if (extensions != "") {
+		extensions.toLowerCase();
+		extensions = extensions.split(",");
+		var periodIndex = file.name.lastIndexOf(".");
+        var extension = file.name.substring(periodIndex+1).toLowerCase();
+        if (extensions.indexOf(extension) == -1)
+			return false;
+	}
+
+        return true;
+}
+
+/**
+ * Clear a given field's contents.
+ *
+ * @param field
+ * 				the field element.
+ */
+function clearFileField(field) {
+	$(field).clear();
+	$(field).parentNode.innerHTML = $(field).parentNode.innerHTML;
+	checkAndSetAttachButton();
+}
+
+/**
+ * If the attachments are uploaded, clear any extra attachment input fields so
+ * they do not take up as much screen space. Additionally, clear the first field
+ * and keep it showing.
+ */
+function clearAttachmentFields() {
+   var form = $('sys_attachment');
+   var fileFields = form.select('.attachmentRow');
+   for (var i = 0; i < fileFields.size(); i++) {
+	   if (i == 0)
+		   clearFileField(fileFields[0].select('td').first().select('input').first());
+	   if (i > 0)
+		   fileFields[i].remove();
+   }
+   checkAndSetAttachButton();
+   setDeleteButton();
+}
+
+// this get called after an attachment is uploaded to update the display
+function refreshAttachments(id, fileName, canDelete, createdBy, createdOn, contentType, encryption, iconPath) {
+  refreshLiveFeedAttachments(id, fileName, contentType, iconPath);
+  var encryptCheck = gel("encrypt_checkbox");
+  if (encryptCheck) {
+     encryptCheck.checked = false;
+     $('sysparm_encryption_context').value = "";
+  }
+  gel("please_wait").style.display = "none";
+
+  // if we didn't get an id, we could not read the attachment due to business rules so we're done
+  if (typeof id == "undefined")
+     return;
+  var noAttachments = gel("no_attachments");
+  if (noAttachments.style.display == "block")
+     noAttachments.style.display = "none";
+
+  // add the new upload to the display
+  var table = gel("attachment_table_body");
+  var tr = cel("tr");
+  var td = cel("td");
+  td.style.whiteSpace = "nowrap";
+  td.colspan = "2";
+
+  if (canDelete=="true") {
+     var input = cel("input");
+     var checkId = "sys_id_" + id;
+     input.name = checkId;
+     input.id = checkId;
+     input.type = "checkbox";
+     input.onclick = function() {setRemoveButton(gel(checkId));};
+     td.appendChild(input);
+
+     gel("delete_button_span").style.display = "inline";
+     var text = document.createTextNode(" ");
+     td.appendChild(text);
+
+     input = cel("input");
+     input.type = "hidden";
+     input.name = "Name";
+     input.value = "false";
+     td.appendChild(input);
+  }
+  var attachment_input = cel("input");
+  attachment_input.className = "attachment_sys_id";
+  attachment_input.type = "hidden";
+  attachment_input.id = id;
+
+  td.appendChild(attachment_input);
+
+
+  var anchor = cel("a");
+  anchor.style.marginRight = "4px";
+  anchor.href = "sys_attachment.do?sys_id=" + id;
+  anchor.title = "${JS:gs.getMessage('Attached by')} " + createdBy + " ${JS:gs.getMessage('on')} " + createdOn;
+  var imgSrc = iconPath;
+  if (encryption != "") {
+     anchor.title += ", ${JS:gs.getMessage('Encrypted')}: " + encryption;
+     imgSrc = "images/icons/attachment_encrypted.gifx";
+  }
+  var img = cel("img");
+  img.src = imgSrc;
+  img.alt = anchor.title;
+  anchor.appendChild(img);
+
+  var text = $(cel('a'));
+  text.href = "sys_attachment.do?sys_id=" + id;
+  text.onkeydown = function(event){return allowInPlaceEditModification(text, event);};
+  text.style.marginRight = "5px";
+  text.style.maxWidth = "75%";
+  text.style.display = "inline-block";
+  text.style.overflow = "hidden";
+  text.style.verticalAlign = "middle";
+  if ('innerText' in text)
+      text.innerText = fileName;
+  else
+      text.textContent = fileName;
+  text.setAttribute("data-id", id);
+  text.inPlaceEdit({
+      selectOnStart: true,
+      turnClickEditingOff: true,
+      onAfterEdit: function(newName) {
+          var oldName = this.oldValue;
+          var ga = new GlideAjax('AttachmentAjax');
+          ga.addParam('sysparm_type', 'rename');
+          ga.addParam('sysparm_value', id);
+          ga.addParam('sysparm_name', newName);
+          ga.getXML(function(response){
+             var answer = response.responseXML.documentElement.getAttribute("answer");
+  	         if (answer !== '0')
+                 alert(new GwtMessage().getMessage("Renaming attachment {0} to new name {1} is not allowed", oldName, newName));
+
+             $$('a[data-id="' + id + '"]').each(function(elem){
+                 if ('innerText' in elem)
+                     elem.innerText = (answer === '0') ? newName : oldName;
+                 else
+                     elem.textContent = (answer === '0') ? newName : oldName;
+             });
+             $$('span[data-id="' + id + '"]').each(function(elem){
+                 if ('innerText' in elem)
+                     elem.innerText = (answer === '0') ? newName : oldName;
+                 else
+                     elem.textContent = (answer === '0') ? newName : oldName;
+             });
+           });
+      }
+  });
+
+  if (contentType == "text/html")
+     anchor.target = "_blank";
+  td.appendChild(anchor);
+  td.appendChild(text);
+
+  var allowRename = gel('ni.show_rename_link').value;
+  if (allowRename == "true") {
+	  var renameAttachment = $(cel('a'));
+	  renameAttachment.className = 'attachment';
+	  renameAttachment.onclick = function() {
+	    text.beginEdit();
+	  };
+	 renameAttachment.innerHTML = '${JS:gs.getMessage("[rename]")}';
+	  td.appendChild(renameAttachment);
+  }
+
+  var showView = gel("ni.show_attachment_view").value;
+  if (showView == "true") {
+      var blank = document.createTextNode(" ");
+      tr.appendChild(blank);
+      var view = cel("a");
+      var newText = document.createTextNode('${JS:gs.getMessage("[view]")}');
+      view.appendChild(newText);
+      view.className = "attachment";
+      if (showPopup == "false")
+          view.href = "sys_attachment.do?sys_id=" + id + "&view=true";
+      else
+          view.onclick = function() {
+              tearOffAttachment(id)
+          };
+      td.appendChild(blank);
+      td.appendChild(view);
+  }
+  var showPopup = gel("ni.show_attachment_popup").value;
+
+  tr.appendChild(td);
+
+  table.appendChild(tr);
+
+  if (hasAttachments()){
+	  gel("download_all_button").style.display = "inline";
+  }
+
+  var form_table_id = "";
+  if(gel("sys_uniqueValue") || gel("sysparm_attachment_cart_id")){
+	  form_table_id = (gel("sys_uniqueValue") || gel("sysparm_attachment_cart_id")).value;
+  }
+  if(form_table_id && attachmentParentSysId != form_table_id){
+	  CustomEvent.fire('record.attachment.uploaded', {
+		  sysid: id,
+		  name: fileName,
+		  hoverText: anchor.title,
+		  image: imgSrc,
+		  showRename: allowRename,
+		  showView: showView,
+		  showPopup: showPopup
+	  });
+  }else{
+	  addAttachmentNameToForm(id, fileName, anchor.title, imgSrc, allowRename, showView, showPopup);
+  }
+
+  if (g_accessibility)
+    alert(fileName + " " + anchor.title);
+}
+
+function refreshLiveFeedAttachments(sys_id, fileName, contentType, iconPath) {
+	var p = gel('live_feed_message_images');
+	if (!p)
+		return;
+
+	if (!contentType)
+		return;
+
+    if (contentType.indexOf('image') != 0 || contentType.indexOf('image/tif') == 0)
+		refreshLiveFeedNonImages(p, sys_id, iconPath, fileName);
+	else
+		refreshLiveFeedImages(p, sys_id, fileName);
+
+	var container = $('live_feed_image_container');
+	if (container)
+		container.show();
+
+}
+
+function refreshLiveFeedNonImages(p, sys_id, iconPath, fileName) {
+	var a = cel('a');
+    a.onclick = function() {tearOffAttachment(sys_id)};
+    a.title = fileName;
+    a.className = "live_feed_attachment_link";
+
+    var img = cel('img');
+    img.src = iconPath;
+    img.className = 'live_feed_image_thumbnail';
+	img.setAttribute("data-sys_id", sys_id);
+    a.appendChild(img);
+	var span = cel('span');
+    span.setAttribute('data-id', sys_id);
+	if ('innerText' in span)
+		span.innerText = fileName;
+	else
+		span.textContet = fileName;
+	a.appendChild(span);
+    p.appendChild(a);
+	p.appendChild(cel('br'));
+    setTimeout(this.hideLoading.bind(this), 200);
+}
+
+function refreshLiveFeedImages(p, sys_id, fileName) {
+	var imageName = "sys_attachment.do?sys_id=" + sys_id;
+	var a = cel('a');
+    a.onclick = function() {tearOffAttachment(sys_id)};
+    a.title = fileName;
+    a.className = "live_feed_attachment_link";
+
+    var img = cel('img');
+    img.src = imageName;
+    img.className = 'live_feed_image_thumbnail';
+	img.setAttribute("data-sys_id", sys_id);
+    a.appendChild(img);
+    p.appendChild(a);
+	p.appendChild(cel('br'));
+    setTimeout(this.hideLoading.bind(this), 200);
+}
+
+// this get called after attachments are deleted to update the display
+function deletedAttachments(sysIds) {
+	var form_table_id = "";
+	if(gel("sys_uniqueValue") || gel("sysparm_attachment_cart_id")){
+		form_table_id = (gel("sys_uniqueValue") || gel("sysparm_attachment_cart_id")).value;
+	}
+	if(form_table_id && attachmentParentSysId != form_table_id){
+		CustomEvent.fire('record.attachment.deleted', sysIds);
+		return;
+	}
+	deleteLiveFeedAttachments(sysIds);
+	var modified = $("attachments_modified");
+	if (modified)
+		modified.value = "true";
+   var header_attachment = $('header_attachment');
+   gel("deleted_sys_ids").value = ""; // there should be none on the list once we return
+   var idArray = sysIds.split(";");
+   for (var i=0; i<idArray.length; i++) {
+      var id = idArray[i];
+      changeCount(attachmentParentSysId, 'decrease');
+      var e = gel("sys_id_" + id);
+      var tr = e.parentNode.parentNode;
+      rel(tr);
+      e = gel("attachment_" + id);
+      if (e)
+         rel(e);
+   }
+
+   var inputs = document.getElementsByTagName("input");
+   var anAttachment = false;
+   var i = 0;
+   while(i < inputs.length && !anAttachment) {
+      if (inputs[i].type == "checkbox" && inputs[i].name.substring(0, 7) == "sys_id_")
+         anAttachment = true;
+      i++;
+   }
+
+   if (!anAttachment) {
+      var noAttachments = gel("no_attachments");
+      noAttachments.style.display = "none";
+      var removeButton = gel("removeButton");
+      removeButton.disabled = true;
+	  var downloadAllButton = gel("download_all_button");
+	  downloadAllButton.style.display = "none";
+	  gel('delete_button_span').style.display = "none";
+	  hideObject($("header_attachment_list_label"));
+
+      if (header_attachment)
+    	  header_attachment.style.height = "auto";
+      var line = $("header_attachment_line");
+      if (line) {
+         line.style.visibility = "hidden";
+         line.style.display = "none";
+      }
+   }
+   gel("please_wait").style.display = "none";
+
+   var more_attachments = $('more_attachments');
+   if (more_attachments && header_attachment)
+   if( (computeAttachmentWidth() - 20) >= (header_attachment.getWidth() - more_attachments.getWidth()))
+       more_attachments.style.display = 'block';
+   else
+       more_attachments.style.display = 'none';
+}
+
+function deleteLiveFeedAttachments(sysIds) {
+	var p = $('live_feed_message_images');
+	if (!p)
+		return;
+
+	if (!p.visible())
+		return;
+
+	idArray = sysIds.split(";");
+	for (var i=0; i<idArray.length; i++) {
+		var imgs = p.select("img.live_feed_image_thumbnail");
+		if (imgs.length < 1)
+			return;
+
+		for (var j=0; j<imgs.length; j++) {
+			if (imgs[j].getAttribute("data-sys_id") == idArray[i]) {
+				var elem = imgs[j].up("a.live_feed_attachment_link");
+				elem.remove();
+				if (elem.next() && (elem.next().tagName.toLowerCase() == "br"))
+					elem.next().remove();
+			}
+		}
+	}
+
+	if (p.select("img.live_feed_image_thumbnail").length > 0)
+		return;
+
+	var container = $('live_feed_image_container');
+	if (container)
+		container.hide();
+
+}
+
+function computeAttachmentWidth() {
+	var temp = $('header_attachment_list').select('li');
+	var totalWidth = 0;
+	for (var i = 0; i < temp.length; i++) {
+		totalWidth += temp[i].getWidth();
+	}
+	return totalWidth;
+}
+
+function closeAttachmentWindow() {
+  GlideDialogWindow.get().destroy();
+}
+
+/**
+ * Add an input field to the file browser in the dialog.
+ * This is called when the "Add Another Attachment" button
+ * is clicked.
+ * */
+function addRowToTable() {
+   var formRows = $('sys_attachment').select(".attachmentRow");
+   var input = "<input type='file' title='${gs.getMessage('Attach')}' " +
+		"name='attachFile' onchange='checkAndSetAttachButton(); setDeleteButton(this.value);'" +
+		"size=41 multiple=true />";
+   var img = "<a href='#' onclick='clearAttachmentField($(this).up().up()); setDeleteButton(this.value);'>" +
+		"<img src='images/icons/kb_no.gif'/></a>";
+	var row = "<tr class='attachmentRow'><td> "
+		+ input + "</td><td align='right'>" + img + "</td></tr>";
+	formRows.last().insert({ "after" : row });
+}
+
+/**
+ * Download all attachments
+ */
+function downloadAllAttachments(){
+	var downloadUrl = window.location.protocol + '//' + window.location.host + '/download_all_attachments.do?sysparm_sys_id=' + attachmentParentSysId;
+	window.location = downloadUrl;
+}
+
+function hasAttachments(){
+	return document.getElementsByClassName("attachment_sys_id").length > 0;
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_prole_software_c_db_script_attachment.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<j:jelly trim="false" xmlns:g="glide" xmlns:g2="null" xmlns:j="jelly:core"
+	xmlns:j2="null">
+	<j:set var="jvar_target_sys_id" value="${RP.getWindowProperties().get('target_sys_id')}" />
+	<j:set var="jvar_target_table" value="${RP.getWindowProperties().get('target_table')}" />
+    <j:set var="jvar_attachment_disabled" value="${RP.getWindowProperties().get('attachment_disabled')}" />
+    <j:set var="jvar_sc_override" value="${RP.getWindowProperties().get('sc_override')}" />
+	<j:set var="jvar_show_link" value="true" />
+	<j:if test="${gs.getProperty('glide.ui.disable_attachment_view') == 'true'}">
+		<j:set var="jvar_show_link" value="false" />
+	</j:if>
+	<input type="hidden" id="ni.show_attachment_view" name="ni.show_attachment_view"
+		value="${jvar_show_link}" />
+	<j:set var="jvar_show_link_popup" value="true" />
+	<j:if test="${gs.getProperty('glide.ui.attachment_popup')=='false'}">
+		<j:set var="jvar_show_link_popup" value="false" />
+	</j:if>
+
+   <!-- Check no_attachment attribute in order to override if necessary. -->
+   <g:evaluate var="jvar_no_attachment" jelly="true">
+		var gr = new GlideRecord(jelly.jvar_target_table);
+		gr.get(jelly.jvar_target_sys_id);
+		gr.getED().getBooleanAttribute("no_attachment");
+	</g:evaluate>
+
+	<g:evaluate var="jvar_cloudedge_invalid" jelly="true">
+		var gr = new GlideRecord(jelly.jvar_target_table);
+		gr.get(jelly.jvar_target_sys_id);
+        gr.getED().hasAttachmentsEncrypted() ${AMP}${AMP} !gs.isEdgeEncryptedSession()
+	</g:evaluate>
+
+   <!-- Check Users Ability to Attach -->
+   <g:evaluate var="jvar_attachrole" expression="gs.getProperty('glide.attachment.role')" />
+
+   <g:evaluate var="jvar_can_write_to_record" jelly="true">
+			var gr = new GlideRecord(jelly.jvar_target_table);
+                        if (jelly.jvar_sc_override == 'true')
+                                "true";
+			if (gr.get(jelly.jvar_target_sys_id))
+				gr.canWrite();
+			else
+				"true";
+   </g:evaluate>
+
+   <j:if test="${jvar_attachment_disabled == 'true'}" >
+        <j:set var="jvar_can_write_to_record" value='false' />
+   </j:if>
+
+   <g:evaluate var="jvar_email_client_override" jelly="true">
+   		var ret = jelly.sysparm_this_url.startsWith('email_client.do');
+   		ret;
+   </g:evaluate>
+
+   <!-- Store parent sys_id for use in javascript -->
+   <script>
+		var attachmentParentSysId = '${jvar_target_sys_id}';
+   </script>
+
+   <j:set var="jvar_can_add_attachments" value="false" />
+   <j:set var="jvar_can_edit_attachments" value="false" />
+
+   <j:if test="${jvar_email_client_override == 'true'|| jvar_sc_override == 'true'}" >
+   		<j:set var="jvar_can_add_attachments" value="true" />
+                <j:set var="jvar_can_edit_attachments" value="true" />
+   </j:if>
+   <j:if test="${jvar_email_client_override == 'false'}">
+	   	<j:if test="${jvar_no_attachment == 'false'}">
+	   		<j:if test="${jvar_can_write_to_record == 'true'}">
+	   			<j:set var="jvar_can_edit_attachments" value="true" />
+	   			<j:if test="${jvar_session.hasRole(jvar_attachrole)}">
+	   				<j:set var="jvar_can_add_attachments" value="true" />
+				</j:if>
+			</j:if>
+		</j:if>
+	</j:if>
+
+    <j:if test="${jvar_attachment_disabled == 'true' || jvar_cloudedge_invalid == 'true'}" >
+        <j:set var="jvar_can_add_attachments" value="false" />
+        <j:set var="jvar_can_edit_attachments" value="false" />
+    </j:if>
+
+	<input type="hidden" id="ni.show_rename_link" name="ni.show_rename_link"
+		value="${jvar_can_add_attachments}" />
+
+	<input type="hidden" id="ni.show_attachment_popup" name="ni.show_attachment_popup"
+		value="${jvar_show_link_popup}" />
+	<table width="100%" style="table-layout:fixed;">
+		<tbody>
+			<j:if test="${jvar_can_add_attachments}">
+				<tr>
+					<td>
+						<div class="caption" style="display:none;">
+							<span>${gs.getMessage('Choose a file to attach')}:</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<FORM id="sys_attachment" name="sys_attachment" action="sys_attachment.do"
+							enctype="multipart/form-data" method="post"
+							onsubmit="return validateAttachment();" target="upload_target"
+							style="display: none;">
+							<j:if test="${jvar_can_add_attachments}">
+								<script>$('sys_attachment').style.display = 'block';</script>
+							</j:if>
+							<input name="attachments_modified" id="attachments_modified"
+								type="hidden" value="" />
+							<input name="sysparm_sys_id" type="hidden" value="${jvar_target_sys_id}" />
+							<input name="sysparm_table" type="hidden" value="${jvar_target_table}" />
+							<input name="max_size" type="hidden" value="${gs.getProperty('com.glide.attachment.max_size')}" />
+							<input name="file_types" type="hidden" value="${gs.getProperty('glide.attachment.extensions')}" />
+							<input name="sysparm_nostack" type="hidden" value="yes" />
+							<input name="sysparm_redirect" type="hidden"
+								value="attachment_uploaded.do?sysparm_domain_restore=false&amp;sysparm_nostack=yes" />
+							<input id="sysparm_encryption_context" name="sysparm_encryption_context"
+								type="hidden" value="" />
+							<table id="attachmentTable" width="100%" style="table-layout:fixed;">
+								<TR class="attachmentRow">
+									<td id="attachFileCell" colspan="3">
+										<input id="attachFile" title="${gs.getMessage('Attach')}"
+											name="attachFile" onChange="checkAndSetAttachButton(); setDeleteButton(this.value); $('attachButton').click();" size="41"
+											type="file" multiple='true' />
+
+										<a href="#" class="attachfile-delete" onclick="clearAttachmentField($(this).up().up()); setDeleteButton(this.value);" style="cursor: default;display:none;">
+											<img src="images/icons/kb_no_disabled.gif" />
+										</a>
+										<input style="display:none;" disabled="true" class="attachfile-attach button" id="attachButton" type="submit"
+											value="${gs.getMessage('Attach')}" />
+									</td>
+								</TR>
+								<g2:attachment_encrypt />
+								<TR>
+									<td>
+										<input style="display:none;" type="button" value="${gs.getMessage('Add Another Attachment')}"
+											onclick="addRowToTable()" class="button"></input>
+									</td>
+								</TR>
+							</table>
+						</FORM>
+					</td>
+				</tr>
+			</j:if>
+			<j:if test="${jvar_cloudedge_invalid}">
+				<tr>
+					<td>
+						<div class="caption">
+							<p>${gs.getMessage('The attachments are encrypted and all actions are disabled until you connect to your company network.')}</p>
+						</div>
+					</td>
+				</tr>
+			</j:if>
+			<tr>
+				<td>
+					<img style="margin: 6px 3px 6px 3px;display:none;" id="please_wait"
+						 src="images/please_wait.gifx" alt="${gs.getMessage('Please Wait')}" />
+					<div class="caption" style="display:none;">
+						<span>${gs.getMessage('Current file attachments')}:</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<FORM action="sys_attachment.do?DELETE" method="post" target="upload_target"
+						onsubmit="return startRemoveAttachments()">
+						<input name="sysparm_nostack" type="hidden" value="yes" />
+						<input name="sysparm_this_url" id="sysparm_this_url" type="hidden"
+							value="" />
+						<input name="deleted_sys_ids" id="deleted_sys_ids" type="hidden"
+							value="" />
+						<table width="100%" style="table-layout:fixed;">
+							<TR>
+								<TD style="white-space:nowrap;">
+									<div id="current_attachments" style="display:block">
+										<div style="margin-top:4px;">
+											<div id="attachment_dialog_list">
+													<TABLE width="100%" style="table-layout:fixed;">
+														<tbody id="attachment_table_body">
+															<j2:set value="false" var="jvar_some_deletable" />
+															<g2:attachment_list sys_id="${jvar_target_sys_id}"
+																table="${jvar_target_table}">
+																<g2:for_each_record file_variable="sys_attachment"
+																	var="attachment">
+																	<j2:set value="true" var="jvar_have_attachments" />
+																	<j2:set
+																		value="$[sys_attachment.encryption_context.getDisplayValue()]"
+																		var="jvar_encrypt_context" />
+																	<TR>
+																		<TD colspan="2" style="white-space:nowrap;">
+																			<j2:set var="jvar_can_delete" value="$[sys_attachment.canDelete()]" />
+																			<j2:if test="${jvar_can_edit_attachments}">
+																			<j2:if test="$[jvar_can_delete]">
+																				<input name="sys_id_$[sys_attachment.sys_id]"
+																					id="sys_id_$[sys_attachment.sys_id]" title="${gs.getMessage('Delete attachment')}"
+																					onclick="setRemoveButton(this);" type="checkbox" />
+																				<j2:set value="true" var="jvar_some_deletable" />
+																			</j2:if>
+																			</j2:if>
+																			<input name="Name" type="hidden" value="false" />
+																			<input type="hidden" id="$[sys_attachment.sys_id]" class="attachment_sys_id" />
+																			<g2:attachment_entry />
+																		</TD>
+																	</TR>
+																</g2:for_each_record>
+															</g2:attachment_list>
+															<j2:set var="jvar_no_attachments_display" value="block" />
+															<j2:if test="$[jvar_have_attachments]">
+																<j2:set var="jvar_no_attachments_display" value="none" />
+															</j2:if>
+															<tr id="no_attachments" style="display:none;">
+																<td colspan="2">${gs.getMessage("None")}</td>
+															</tr>
+														</tbody>
+													</TABLE>
+											</div>
+											<j2:if test="${jvar_can_edit_attachments}">
+												<table width="100%" style="table-layout:fixed;">
+													<tr>
+														<td>
+															<j2:set var="jvar_show_download_all_button" value="none" />
+															<j2:if test="$[jvar_have_attachments]">
+																<j2:set var="jvar_show_download_all_button" value="inline" />
+															</j2:if>
+															<input style="display:$[jvar_show_download_all_button];" id="download_all_button" type="button" class="button" value="Download All" onclick="downloadAllAttachments()"/>
+														</td>
+														<td>
+															<span id="delete_button_span"
+																style="float:right; text-align:right; display:none;">
+																<input disabled="true" id="removeButton" class="btn btn-destructive-subdued"
+																	title="${gs.getMessage('Remove')}" type="submit" value="${gs.getMessage('Remove')}" />
+															</span>
+														</td>
+													</tr>
+												</table>
+											</j2:if>
+										</div>
+									</div>
+								</TD>
+							</TR>
+						</table>
+					</FORM>
+					<j2:if test="$[jvar_some_deletable]">
+						<script>document.getElementById('delete_button_span').style.display
+							= "inline";</script>
+					</j2:if>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- this is where we send our form submissions so that the dialog stays
+		up -->
+	<iframe id="upload_target" name="upload_target" src="blank.do?sysparm_domain_restore=false"
+		style="position:fixed;clip: rect(0,0,0,0);width:100%;height:0;border:0px solid #fff;">$[SP]</iframe>
+</j:jelly>]]></html>
+        <name>db_script_attachment</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-04-06 19:06:28</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>c991359c134a3280d9ff30ded144b01c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>db_script_attachment</sys_name>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sys_ui_page_c991359c134a3280d9ff30ded144b01c</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-04-06 19:06:28</sys_updated_on>
+    </sys_ui_page>
+</record_update>
