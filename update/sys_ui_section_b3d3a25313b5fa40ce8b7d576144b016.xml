@@ -5,13 +5,13 @@
             <element>development_team</element>
             <position>0</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>a4e3a25313b5fa40ce8b7d576144b09c</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>dbc1716e134a3200ce8b7d576144b0e7</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -19,13 +19,13 @@
             <element>qa_lead</element>
             <position>1</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>28e3a25313b5fa40ce8b7d576144b09c</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>5fc1716e134a3200ce8b7d576144b0e7</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -33,13 +33,13 @@
             <element>project_sponsor</element>
             <position>2</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>a8e3a25313b5fa40ce8b7d576144b09c</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>dfc1716e134a3200ce8b7d576144b0e7</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -47,139 +47,153 @@
             <element>rc_entry</element>
             <position>3</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>2ce3a25313b5fa40ce8b7d576144b09c</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>53c1716e134a3200ce8b7d576144b0e8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>start_date</element>
+            <position>4</position>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>d3c1716e134a3200ce8b7d576144b0e8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>deadline</element>
-            <position>4</position>
+            <position>5</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>ace3a25313b5fa40ce8b7d576144b09c</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>57c1716e134a3200ce8b7d576144b0e8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>deadline_date</element>
-            <position>5</position>
+            <position>6</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>20e3a25313b5fa40ce8b7d576144b09d</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>d7c1716e134a3200ce8b7d576144b0e8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>6</position>
+            <position>7</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>a0e3a25313b5fa40ce8b7d576144b09d</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>5bc1716e134a3200ce8b7d576144b0e8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>financial_impact</element>
-            <position>7</position>
+            <position>8</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>24e3a25313b5fa40ce8b7d576144b09d</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>dbc1716e134a3200ce8b7d576144b0e8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>new_software</element>
-            <position>8</position>
+            <position>9</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>a4e3a25313b5fa40ce8b7d576144b09d</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>5fc1716e134a3200ce8b7d576144b0e8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>new_software_repo</element>
-            <position>9</position>
+            <position>10</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>28e3a25313b5fa40ce8b7d576144b09d</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>dfc1716e134a3200ce8b7d576144b0e8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>core_change</element>
-            <position>10</position>
+            <position>11</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>a8e3a25313b5fa40ce8b7d576144b09d</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>53c1716e134a3200ce8b7d576144b0e9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>database_changes</element>
-            <position>11</position>
+            <position>12</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>2ce3a25313b5fa40ce8b7d576144b09d</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>d3c1716e134a3200ce8b7d576144b0e9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>database_engineer</element>
-            <position>12</position>
+            <position>13</position>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-03 20:08:50</sys_created_on>
-            <sys_id>ace3a25313b5fa40ce8b7d576144b09d</sys_id>
+            <sys_created_on>2017-04-13 18:50:17</sys_created_on>
+            <sys_id>57c1716e134a3200ce8b7d576144b0e9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Change Information" display_value="Change Information" name="x_prole_software_c_software_change_request_table" sys_domain="global" view="Default view">b3d3a25313b5fa40ce8b7d576144b016</sys_ui_section>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-03 20:08:50</sys_updated_on>
+            <sys_updated_on>2017-04-13 18:50:17</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

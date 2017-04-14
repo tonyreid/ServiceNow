@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="start_date" label="Planned Start Date" language="en" table="x_prole_software_c_software_change_request_table">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>start_date</element>
+            <help/>
+            <hint/>
+            <label>Planned Start Date</label>
+            <language>en</language>
+            <name>x_prole_software_c_software_change_request_table</name>
+            <plural>Planned Start Dates</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-13 18:49:59</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>b2b1fd2e134a3200ce8b7d576144b0ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Planned Start Date</sys_name>
+            <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+            <sys_update_name>sys_documentation_x_prole_software_c_software_change_request_table_start_date_en</sys_update_name>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-04-13 18:49:59</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

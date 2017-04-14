@@ -64,6 +64,7 @@
         <element label="Estimated RC Entry" mandatory="true" max_length="40" name="rc_entry" type="glide_date"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Related Changes" max_length="32" name="related_changes" reference="x_prole_software_c_software_change_request_table" type="reference"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Related Incidents" max_length="4000" name="related_incidents" reference="incident" type="glide_list"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Planned Start Date" max_length="40" name="start_date" type="glide_date_time"/>
         <element choice="3" default="1" label="Status" max_length="40" name="status" read_only="true" type="choice">
             <choice>
                 <element label="Pipeline" sequence="10" value="1"/>
