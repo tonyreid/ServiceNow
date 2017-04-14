@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="Software Change Task" max_length="40" name="x_prole_software_c_software_change_task" sizeclass="19" type="collection"/>
+    <element audit="true" extends="task" label="Software Change Task" max_length="40" name="x_prole_software_c_software_change_task" sizeclass="48" type="collection"/>
 </database>
