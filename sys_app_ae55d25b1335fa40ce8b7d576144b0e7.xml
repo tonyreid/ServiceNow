@@ -23,14 +23,14 @@
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-03 19:05:22</sys_created_on>
         <sys_id>ae55d25b1335fa40ce8b7d576144b0e7</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-        <sys_updated_on>2017-04-13 15:47:40</sys_updated_on>
+        <sys_updated_on>2017-04-21 18:34:06</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <user_role display_value="x_prole_software_c.user" name="x_prole_software_c.user">2255d65b1335fa40ce8b7d576144b00c</user_role>
         <vendor/>
         <vendor_prefix/>
-        <version>1.1.0</version>
+        <version>1.2.0</version>
     </sys_app>
 </record_update>
