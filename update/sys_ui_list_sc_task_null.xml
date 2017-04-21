@@ -132,7 +132,7 @@
             <sys_update_name>sys_ui_list_sc_task_null</sys_update_name>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
             <sys_updated_on>2017-04-12 19:51:30</sys_updated_on>
-            <sys_user display_value="SN ADMIN Tony Reid">b125483613d5f200ce8b7d576144b022</sys_user>
+            <sys_user display_value="SN Admin Tony Reid">b125483613d5f200ce8b7d576144b022</sys_user>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
         </sys_ui_list>

@@ -17,7 +17,7 @@
         <sys_created_on>2017-04-05 21:51:59</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>9a9e094413cafe40ce8b7d576144b050</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Software Change Test</sys_name>
         <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
         <sys_policy/>
@@ -25,10 +25,10 @@
         <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
         <sys_update_name>sys_template_9a9e094413cafe40ce8b7d576144b050</sys_update_name>
         <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-        <sys_updated_on>2017-04-05 21:51:59</sys_updated_on>
+        <sys_updated_on>2017-04-19 20:49:24</sys_updated_on>
         <table>x_prole_software_c_software_change_request_table</table>
-        <template>category=data^core_change=no^database_changes=yes^database_engineer=d6e7c4ec1368e200ce8b3d576144b0e3^deadline=no^description=Test attachment^development_team=a6034ba613a86600ce8b3d576144b0e7^financial_impact=no^new_software=no^priority=4^project_sponsor=Leigh McCombs^qa_lead=b18ca3e313092a00d9ff30ded144b03c^rc_entry=04/17/2017^short_description=Test DB script attachment^EQ</template>
-        <user display_value="SN ADMIN Tony Reid">b125483613d5f200ce8b7d576144b022</user>
+        <template>category=data^core_change=no^database_changes=yes^database_engineer=817cafa313092a00d9ff30ded144b0dc^deadline=no^description=Test change^development_team=a6034ba613a86600ce8b3d576144b0e7^financial_impact=no^new_software=no^priority=4^project_sponsor=Leigh McCombs^qa_lead=b18ca3e313092a00d9ff30ded144b03c^rc_entry=05/01/2017^short_description=Test CCSX ticket^EQ</template>
+        <user display_value="SN Admin Tony Reid">b125483613d5f200ce8b7d576144b022</user>
         <view/>
     </sys_template>
 </record_update>
