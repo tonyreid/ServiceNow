@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="Software Change Request" max_length="40" name="x_prole_software_c_software_change_request_table" sizeclass="22" type="collection">
+    <element audit="true" extends="task" label="Software Change Request" max_length="40" name="x_prole_software_c_software_change_request_table" sizeclass="25" type="collection">
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Affected CI(s)" max_length="4000" name="affected_ci" reference="cmdb_ci" reference_qual="sys_class_name=cmdb_ci_appl^EQ" reference_qual_condition="sys_class_name=cmdb_ci_appl^EQ" type="glide_list"/>
         <element label="Business Approval" max_length="4000" name="business_approval" reference="sys_user" reference_qual="active=true^user_nameNOT LIKEadmin^EQ" reference_qual_condition="active=true^user_nameNOT LIKEadmin^EQ" type="glide_list"/>
         <element choice="1" label="Category" mandatory="true" max_length="40" name="category" type="choice">

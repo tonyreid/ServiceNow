@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="Software Change Task" max_length="40" name="x_prole_software_c_software_change_task" sizeclass="128" type="collection">
+    <element audit="true" extends="task" label="Software Change Task" max_length="40" name="x_prole_software_c_software_change_task" sizeclass="171" type="collection">
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Affected CI's" max_length="4000" name="affected_ci" reference="cmdb_ci" type="glide_list"/>
     </element>
 </database>
