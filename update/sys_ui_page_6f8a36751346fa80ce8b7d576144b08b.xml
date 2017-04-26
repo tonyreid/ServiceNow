@@ -39,7 +39,7 @@
         <sys_class_name>sys_ui_page</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-11 16:13:24</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>6f8a36751346fa80ce8b7d576144b08b</sys_id>
         <sys_mod_count>5</sys_mod_count>
         <sys_name>db_scripts</sys_name>

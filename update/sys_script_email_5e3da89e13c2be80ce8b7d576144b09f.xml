@@ -29,7 +29,7 @@
         <sys_class_name>sys_script_email</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-12 19:16:57</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>5e3da89e13c2be80ce8b7d576144b09f</sys_id>
         <sys_mod_count>4</sys_mod_count>
         <sys_name>ccsx_details</sys_name>

@@ -45,9 +45,9 @@
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-11 19:59:56</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
-        <sys_domain_path/>
+        <sys_domain_path>/</sys_domain_path>
         <sys_id>911e6f71130efa80ce8b7d576144b0fd</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_name>Copy child attachments</sys_name>

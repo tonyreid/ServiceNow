@@ -7,7 +7,7 @@
         <sys_class_name>sys_scope_privilege</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-12 19:19:39</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>3beee8d21306be80ce8b7d576144b092</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>TemplatePrinter.print</sys_name>

@@ -9,7 +9,7 @@
         <sys_class_name>sysevent_register</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-05 13:33:37</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>e26cd3371379be40d9ff30ded144b06a</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_prole_software_c.change.success</sys_name>

@@ -47,17 +47,17 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-05 17:31:04</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
-        <sys_id>45f2100c13c2fe40ce8b7d576144b091</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ba07a4f213567200d9ff30ded144b012</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>Jira Stories</sys_name>
         <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
         <sys_update_name>sys_dictionary_x_prole_software_c_software_change_request_table_jira_stories</sys_update_name>
-        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-        <sys_updated_on>2017-04-12 18:59:18</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2017-04-26 18:17:58</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

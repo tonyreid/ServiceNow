@@ -7,7 +7,7 @@
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-03 20:23:35</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>ae37e2d713b5fa40ce8b7d576144b005</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>business_approval</sys_name>

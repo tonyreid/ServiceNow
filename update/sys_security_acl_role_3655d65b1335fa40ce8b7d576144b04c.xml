@@ -4,7 +4,7 @@
         <sys_class_name>sys_security_acl_role</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-03 19:05:22</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>3655d65b1335fa40ce8b7d576144b04c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_prole_software_c_software_change_request_table.x_prole_software_c.user</sys_name>

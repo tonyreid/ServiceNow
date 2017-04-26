@@ -7,7 +7,7 @@
         <sys_class_name>sys_ui_style</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-05 13:58:32</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>3f42637b1379be40d9ff30ded144b0e0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_prole_software_c_software_change_request_table</sys_name>

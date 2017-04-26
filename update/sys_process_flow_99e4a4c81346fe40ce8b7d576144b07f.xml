@@ -12,7 +12,7 @@
         <sys_class_name>sys_process_flow</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-05 18:49:27</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>99e4a4c81346fe40ce8b7d576144b07f</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>accepted_rc</sys_name>

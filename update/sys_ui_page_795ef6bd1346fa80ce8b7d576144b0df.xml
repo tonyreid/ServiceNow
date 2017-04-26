@@ -36,7 +36,7 @@ function no_attachment(){
         <sys_class_name>sys_ui_page</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-11 16:29:55</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>795ef6bd1346fa80ce8b7d576144b0df</sys_id>
         <sys_mod_count>28</sys_mod_count>
         <sys_name>cssx_attachment</sys_name>

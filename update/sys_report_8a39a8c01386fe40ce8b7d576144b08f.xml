@@ -82,7 +82,7 @@
         <sys_class_name>sys_report</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-05 19:08:22</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>8a39a8c01386fe40ce8b7d576144b08f</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>Software Change Calendar</sys_name>

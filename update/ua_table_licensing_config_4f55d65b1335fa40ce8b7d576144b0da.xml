@@ -13,7 +13,7 @@
         <sys_class_name>ua_table_licensing_config</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-03 19:05:23</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>4f55d65b1335fa40ce8b7d576144b0da</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_prole_software_c_software_change_request_table</sys_name>
