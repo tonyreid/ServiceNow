@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>ccsx_task_details</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(current, template, email, email_action, event) {
+	template.print('<p><font size="4" color="#999999" face="helvetica"><strong>');
+	template.print("CCSX Task Summary:<br />");
+	template.print('</strong></font></p>');
+	template.print('<font size="3" color="#999999" face="helvetica">');
+	template.print('<p>' + gs.getMessage('Assigned To') + ': ${assigned_to}</p>');
+	template.print('<p>' + gs.getMessage('Assignment Group') + ': ${assignment_group}</p>');
+	template.print('<p>' + gs.getMessage('Description') + ': ${description}</p>');
+	template.print('</font>');
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-05-26 16:42:16</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>57d0b61c13cbf640ce8b7d576144b00b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>ccsx_task_details</sys_name>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sys_script_email_57d0b61c13cbf640ce8b7d576144b00b</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-05-26 16:52:31</sys_updated_on>
+    </sys_script_email>
+</record_update>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>rc_entry</field>
+        <global>true</global>
+        <messages/>
+        <name>Date Validation</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+	if (isLoading || newValue == '') {
+		return;
+	}
+	var cdt = g_form.getValue('rc_entry'); //First Date/Time field
+	var dttype = 'day'; //this can be day, hour, minute, second. By default it will return seconds.
+	
+	var ajax = new GlideAjax('global.ClientDateTimeUtils');
+	ajax.addParam('sysparm_name','getNowDateTimeDiff');
+	ajax.addParam('sysparm_fdt', cdt);
+	ajax.addParam('sysparm_difftype', dttype);
+	ajax.getXML(doSomething);
+	
+	function doSomething(response){
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		if(answer >= 0){
+			return true;
+		} else {
+			alert('Estimated RC Entry date cannot be in the past');
+			g_form.setValue('rc_entry','');
+		}
+		
+		
+	}
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-05-23 19:42:52</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>30acff9713fef640d9ff30ded144b0f4</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Date Validation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sys_script_client_30acff9713fef640d9ff30ded144b0f4</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-05-23 19:57:59</sys_updated_on>
+        <table>x_prole_software_c_software_change_request_table</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

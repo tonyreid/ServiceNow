@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope, $rootScope, $timeout, spUtil, $location, $window, nowAttachmentHandler, snRecordWatcher, runtimeState, meetingAgenda, $log, go, CAB) {
+	var wChan;
+	var ctrl = this;
+	$scope.meetingFinished = false; // end_meeting is clicked manually
+	$scope.agendaFinished = false; // finish is clicked after all agenda items are done
+	$scope.currentItemOrLocalStateSelected = false; // we still want to see the pending agenda items form, even if meeting is finished, instead of the "finish message"
+	
+	$scope.openChangeRecord = function(sysId) {
+		go.toChangeFormModal(sysId);
+	};
+	
+	function buildTabbedSections() {
+		var cabTabSections = {"Change" : []};
+		var cabTabLabels = ["Change"];
+		
+		$scope.data.f._sections.forEach(function(section){
+			if (!section.caption || section.caption=="") {
+				cabTabSections["Change"].push(section);
+				return;
+			}
+			
+			if (!cabTabSections[section.caption])
+				cabTabSections[section.caption] = [];
+			
+			cabTabSections[section.caption].push(section);
+			if(cabTabLabels.indexOf(section.caption) == -1)
+				cabTabLabels.push(section.caption);
+		});
+		
+		$scope.data.f.cabTabSections = cabTabSections;
+		$scope.data.f.cabTabLabels = cabTabLabels;
+	}
+	
+	function loadForm(table, sys_id) {
+		var f = {};
+		$scope.data.table = f.table = table;
+		$scope.data.sys_id = f.sys_id = sys_id;
+		f.view = $scope.data.view;
+		return spUtil.get($scope, f).then(function(result) {
+			$scope.data.f = result.data.f;
+			$scope.data.canWrite = result.data.canWrite;
+			$scope.shortDescription = result.data.f.title;
+			buildTabbedSections();
+		});
+	}
+	
+	$scope.$on('spModel.fields.rendered', function() {
+		if (ctrl.panels)
+			ctrl.panels.removeClass('shift-out').addClass('shift-in');
+	});
+
+	var g_form;
+	$scope.$on('spModel.gForm.initialized', function(e, gFormInstance) {
+		g_form = gFormInstance;
+	});
+
+	$scope.$watch('data.f._related_lists', function() {
+		$scope.data.hideRelatedLists = hideRelatedLists();
+	}, true);
+
+	function hideRelatedLists() {
+		if (!$scope.data.f._related_lists)
+			return true;
+
+		if ($scope.options.hideRelatedLists == true)
+			return true;
+
+		if ($scope.data.sys_id == '-1')
+			return true;
+
+		// If all related lists are visible=false then hide
+		if ($scope.data.f._related_lists.length > 0) {
+			for (var i in $scope.data.f._related_lists) {
+				var list = $scope.data.f._related_lists[i];
+				if (list.visible) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	function failNicely(response) {
+		$log.error("Failed data request");
+		$log.error(response);
+	}
+
+	$scope.startMeeting = function() {
+		runtimeState.startMeetingAndSelectNextAgenda();
+	};
+
+	$scope.endMeeting = function() {
+		runtimeState.endMeeting();
+	};
+
+	function applyWatcherOnChangeRecord(curChangeRecordSysId) {
+		if (wChan)
+			wChan.unsubscribe();
+		wChan = snRecordWatcher.initChannel("change_request", "sys_id=" + curChangeRecordSysId);
+		wChan.subscribe(function(response) {
+			loadForm("change_request", curChangeRecordSysId);
+		});
+	}
+
+	function loadChangeRequestForm(agendaItemSysId) {
+		if (agendaItemSysId && typeof agendaItemSysId !== 'undefined') {
+			var agendaItem = meetingAgenda.getAgendaItem(agendaItemSysId);
+			applyWatcherOnChangeRecord(agendaItem.task.value);
+			$scope.currentItemOrLocalStateSelected = true;
+			loadForm("change_request", agendaItem.task.value);
+		}
+	}
+
+	runtimeState.get($scope.data.meetingId).then(function(rs) {
+				var timeoutCode;
+				$scope.rs = rs;
+				meetingAgenda.get($scope.data.meetingId).then(function(agenda) {
+					$scope.agenda = agenda;
+					loadChangeRequestForm($scope.rs.current_agenda_item.value);
+					$scope.$watch('rs.current_agenda_item.value', function() {
+						if (!rs.current_agenda_item.value && !meetingAgenda.getNextPendingAgendaItem()) {
+							$scope.agendaFinished = true;
+							$scope.currentItemOrLocalStateSelected = false;
+						}
+						if (runtimeState.isViewingCurrent()) {
+							loadChangeRequestForm($scope.rs.current_agenda_item.value);
+						}
+					});
+					$scope.$watch('rs.localState.viewing', function() {
+						var timeoutForAgendaItemAnimation = 350;  // since transition time for agenda-item = 0.3s
+						clearTimeout(timeoutCode);
+						timeoutCode = setTimeout(function() {
+							loadChangeRequestForm($scope.rs.localState.viewing);
+						},timeoutForAgendaItemAnimation);
+					});
+					$scope.$watch('rs.cab_meeting.record.state.value', function(recordState) {
+						if (recordState == CAB.COMPLETE) {
+							$scope.meetingFinished = true;
+							$scope.currentItemOrLocalStateSelected = false;
+						}
+					});
+				},
+				function(response) {
+					failNicely(response);
+				}
+				);
+			},
+		function(response) {
+			failNicely(response);
+		}
+	);
+
+	$scope.isCABManager = function() {
+		return runtimeState.isCABManager($window.NOW.user_id);
+	};
+
+	$scope.isMeetingInProgress = function() {
+		if (!$scope.rs || !$scope.rs.cab_meeting)
+			return;
+		return $scope.rs.cab_meeting.record.state.value == CAB.IN_PROGRESS;
+	};
+
+	$scope.isMeetingPending = function() {
+		if (!$scope.rs || !$scope.rs.cab_meeting)
+			return;
+		return $scope.rs.cab_meeting.record.state.value == CAB.PENDING;
+	};
+}
+	]]></client_script>
+        <controller_as>c</controller_as>
+        <css>
+  #vcab_bootstrap_override {
+	    .nav-tabs {
+	       	margin-bottom: 30px;
+	    }
+	    .nav-tabs &gt; li.active {
+	      	border-bottom: 4px solid #278EFC !important;
+	   	}
+	   	.nav-tabs &gt; li, .nav-tabs &gt; li.active {
+	      &gt;a, &gt;a:hover, &gt;a:focus {
+	          background-color: #FFFFFF;
+	          border: 0px !important;
+	      }
+	   }
+	   	.field-set {
+	       padding-left: 10px;
+	       padding-right: 10px;
+	    }
+	}
+
+	.form-modal-icon {
+		cursor: pointer;
+		float: right;
+		.icon-edit {
+			padding: 5px 6px 2px 6px !important;
+			margin-top: 3px;
+		}
+	}
+
+	.icon-edit:before {
+		vertical-align: initial;
+		font-size: 20px;
+	}
+
+	.icon-edit:hover {
+		color: #278EFC;
+	}
+
+	.no-record-msg-box {
+		text-align: center;
+		height: 500px;
+		background-color: #FFFFFF;
+		padding-top: 130px;
+		.no-record-msg {
+			border: 1px solid $color-lightest;
+			padding: 75px;
+			border-radius: 5px;
+		}
+		.meeting-status {
+			cursor: pointer;
+			color: #3696F8;
+		}
+		.no-record-msg, .meeting-status {
+			font-size: 18px;
+		}
+	}
+
+	.message-icon-box  {
+		text-align: center;
+		padding-right: 70px; /* width of body - width of msg-box */
+		padding-bottom: 112px; /* 72px(message pad) + 40px(icon width) */
+		.circle {
+			width: 72px;
+			height: 72px;
+			background: $color-accent;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+			border-radius: 50%;
+			position: absolute; /* history icon should see above the line of msg-box */
+			z-index: 2;
+			.icon-history {
+				font-size: 40px;
+				color: #FFFFFF !important;
+			}
+			.icon-history:before {
+				padding-top: 10px; /* Align icon to center of circle */
+			}
+		}
+	}
+
+	.comment {
+	    font-weight: bold;
+	    margin-top: 2px;
+	    margin-bottom: 2px;
+	}
+
+	.mce-panel, .mce-btn {
+	    background-image: none;
+	    background-color: #f0f3f4;
+	}
+
+	.action-btn {
+	    margin-right: 5px;
+	}
+
+	.timeline-container {
+	    max-height: 50vh;
+	    height: 100%;
+	    overflow-y: auto;
+	}
+
+	.panel .panel {
+	    height: auto !important;
+	}
+
+	.panel-default {
+	    border: 0px !important;
+	}
+
+	.attachment-button {
+	    .glyphicon-paperclip {
+	        font-size: 18px;
+	    }
+	}
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>cab-workbench-form-ccsx</id>
+        <internal>false</internal>
+        <link/>
+        <name>cab_workbench_form_ccsx</name>
+        <option_schema>[{"name": "view","label":"View name"}, {"name":"disableUIActions","label":"Disable UI Actions on Form","type":"boolean"},{"name":"showFormView","label":"Display current form view","type":"boolean"},{"name":"omitHeaderOptions","label":"Omit header options icon","type":"boolean"}]</option_schema>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[    (function($sp, input, data, options, gs) {
+	"use strict";
+	data.isAdmin = gs.hasRightsTo('sp/configure.all/execute', null);
+	data.meetingId = $sp.getParameter('sys_id');
+	data.emptyStateTemplate = options.empty_state_template;
+	data.disableUIActions = options.disableUIActions || false;
+	data.hideRelatedLists = options.hideRelatedLists || false;
+	if (input) {
+		data.table = input.table;
+		data.sys_id = input.sys_id;
+		data.view = input.view;
+		var result = {};
+		if (input._fields)
+			result = $sp.saveRecord(input.table, input.sys_id, input._fields);
+
+		if (input.sys_id == '-1') {
+			data.sys_id = result.sys_id;
+			data.isNewRecord = true;
+		}
+	} else {
+		data.table = $sp.getParameter("t") || $sp.getParameter("table") || $sp.getParameter("sl_table") || options.table;
+		data.sys_id = $sp.getParameter("sys_id") || $sp.getParameter("sl_sys_id") || options.sys_id;
+		data.view = $sp.getParameter("v") || $sp.getParameter("view") || options.view; // no default
+	}
+	data.query = $sp.getParameter("query");
+	data.f = {};
+	if (!data.table || !data.sys_id)
+		return;
+	var rec = $sp.getRecord(data.table, data.sys_id);
+	data.canWrite = rec.canWrite();
+	data.f = $sp.getForm(data.table, data.sys_id, data.query, data.view);
+	if (data.f && data.f._fields) {
+		for (var fieldName in data.f._fields)
+			data.f._fields[fieldName].readonly = true; // set all the fields readonly on form
+	}
+	//Activity formatter is hardcoded in for now, but this will be generalized to
+	//handle more formatters.
+
+	var ticketConversation = $sp.getWidget('widget-ticket-conversation', {
+		table: data.table,
+		sys_id: data.sys_id,
+		includeExtended: true,
+		title: "${Activity}",
+		placeholder: "${Add a comment}",
+		btnLabel: "${Post}"
+	});
+	data.f._formatters[".formatter.444ea5c6bf310100e628555b3f0739d6"] = {
+		widget: ticketConversation
+	};
+		
+})($sp, input, data, options, gs);
+	]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-05-15 18:16:14</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>e4ec52fc13767a00d9ff30ded144b0fc</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>cab_workbench_form_ccsx</sys_name>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sp_widget_e4ec52fc13767a00d9ff30ded144b0fc</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-05-16 20:04:56</sys_updated_on>
+        <template><![CDATA[
+<div id="agenda-item-form-widget" class="panel-shift">
+	<div class="" ng-if="!data.f._view.length && data.hideRelatedLists && data.emptyStateTemplate">
+		<div class="panel panel-default" ng-include="data.emptyStateTemplate"></div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div ng-if="!currentItemOrLocalStateSelected &amp;&amp; (meetingFinished || agendaFinished || (!data.f._view.length &amp;&amp; !data.emptyStateTemplate))">
+				<div class="no-record-msg-box">
+					<div class="message-icon-box">
+						<span class="circle">
+						<span class="icon-history"></span>
+						</span>
+					</div>
+					<div ng-if="!meetingFinished &amp;&amp; !agendaFinished">
+						<span class="no-record-msg">${The meeting has not started. A record will display once the meeting begins.}</span>
+						<br><br>
+						<span ng-if="isCABManager() && isMeetingPending()" class="meeting-status" ng-click="startMeeting()">${Start meeting}</span>
+					</div>
+					<div ng-if="agendaFinished &amp;&amp; !meetingFinished">
+						<span class="no-record-msg">${The agenda has been completed.}</span>
+						<br><br>
+						<span ng-if="isCABManager() && isMeetingInProgress()" class="meeting-status" ng-click="endMeeting()">${End meeting}</span>
+					</div>
+					<span ng-if="meetingFinished" class="no-record-msg">${The meeting has finished.}</span>
+				</div>
+			</div>
+			<div ng-if="((!meetingFinished &amp;&amp; !agendaFinished) || currentItemOrLocalStateSelected) &amp;&amp; data.f &amp;&amp; data.f._view.length">
+				<div class="form-modal-icon">
+					<div class="icon-edit" ng-click="openChangeRecord(data.sys_id)"></div>
+				</div>
+				<!-- form -->
+				<div>
+					<sp-model form_model="data.f" mandatory="mandatory"></sp-model>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

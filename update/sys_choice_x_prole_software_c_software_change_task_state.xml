@@ -82,6 +82,25 @@
             <element>state</element>
             <hint/>
             <inactive>true</inactive>
+            <label>Work in Progress</label>
+            <language>en</language>
+            <name>x_prole_software_c_software_change_task</name>
+            <sequence>2</sequence>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-04-05 14:07:42</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8664a73313b9be40d9ff30ded144b066</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-05-26 15:48:39</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
             <label>Closed Skipped</label>
             <language>en</language>
             <name>x_prole_software_c_software_change_task</name>
@@ -91,29 +110,10 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>8e64a73313b9be40d9ff30ded144b06a</sys_id>
-            <sys_mod_count>1</sys_mod_count>
-            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-19 20:47:00</sys_updated_on>
-            <value>7</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>state</element>
-            <hint/>
-            <inactive>true</inactive>
-            <label>Work in Progress</label>
-            <language>en</language>
-            <name>x_prole_software_c_software_change_task</name>
-            <sequence>3</sequence>
-            <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-05 14:07:42</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_id>8664a73313b9be40d9ff30ded144b066</sys_id>
             <sys_mod_count>2</sys_mod_count>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-21 14:49:01</sys_updated_on>
-            <value>2</value>
+            <sys_updated_on>2017-05-26 15:48:39</sys_updated_on>
+            <value>7</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>
@@ -161,7 +161,7 @@
             <sys_created_on>2017-04-05 14:07:42</sys_created_on>
             <sys_customer_update>false</sys_customer_update>
             <sys_id>9e1768f213567200d9ff30ded144b007</sys_id>
-            <sys_mod_count>13</sys_mod_count>
+            <sys_mod_count>14</sys_mod_count>
             <sys_name>state</sys_name>
             <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
             <sys_policy/>
@@ -169,7 +169,7 @@
             <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
             <sys_update_name>sys_choice_x_prole_software_c_software_change_task_state</sys_update_name>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-21 18:04:33</sys_updated_on>
+            <sys_updated_on>2017-05-26 15:48:39</sys_updated_on>
         </sys_choice_set>
     </sys_choice>
 </record_update>

@@ -14,10 +14,10 @@
 	//Type appropriate comment here, and begin script below
 	var short_desc = g_form.getValue('short_description');
 	var state = g_form.getValue('state');
-	if(short_desc.indexOf("Production Testing") >= 1 && (state != 3 || state != 4)){
+	if(short_desc.toString().indexOf('QA') >= -1 && (state != 3 || state != 4)){
 		g_form.clearOptions('state');
 		g_form.addOption('state', 1, 'Open');
-		g_form.addOption('state', 3, 'Closed Complete');
+		g_form.addOption('state', 3, 'Passed Validation');
 		g_form.addOption('state', 4, 'Failed Validation');
 	} else {
 		g_form.removeOption('state', 4);
@@ -26,11 +26,11 @@
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-21 15:06:48</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>06098a4d13527a00ce8b7d576144b045</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>QA Validation States</sys_name>
         <sys_overrides/>
         <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
         <sys_update_name>sys_script_client_06098a4d13527a00ce8b7d576144b045</sys_update_name>
         <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-        <sys_updated_on>2017-04-21 18:32:45</sys_updated_on>
+        <sys_updated_on>2017-05-26 14:49:07</sys_updated_on>
         <table>x_prole_software_c_software_change_task</table>
         <type>onLoad</type>
         <ui_type>10</ui_type>
