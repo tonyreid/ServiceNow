@@ -25,7 +25,7 @@
 	
 	function doSomething(response){
 		var answer = response.responseXML.documentElement.getAttribute("answer");
-		if(answer >= 0){
+		if(answer >= -1){
 			return true;
 		} else {
 			alert('Estimated RC Entry date cannot be in the past');
@@ -42,7 +42,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>30acff9713fef640d9ff30ded144b0f4</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Date Validation</sys_name>
         <sys_overrides/>
         <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
@@ -51,7 +51,7 @@
         <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
         <sys_update_name>sys_script_client_30acff9713fef640d9ff30ded144b0f4</sys_update_name>
         <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-        <sys_updated_on>2017-05-23 19:57:59</sys_updated_on>
+        <sys_updated_on>2017-06-06 13:09:10</sys_updated_on>
         <table>x_prole_software_c_software_change_request_table</table>
         <type>onChange</type>
         <ui_type>10</ui_type>
