@@ -32,12 +32,12 @@
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-06-06 13:10:04</sys_created_on>
         <sys_id>8ac9663f1383ba04d9ff30ded144b08f</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-        <sys_updated_on>2017-06-06 13:15:45</sys_updated_on>
+        <sys_updated_on>2017-06-06 13:16:42</sys_updated_on>
         <table>x_prole_software_c_software_change_request_table</table>
         <timezone/>
-        <validated>false</validated>
+        <validated>true</validated>
         <workflow display_value="CCSX Software Change">9d3ee65313f5fa40ce8b7d576144b08d</workflow>
     </wf_workflow_version>
     <wf_workflow action="INSERT_OR_UPDATE">

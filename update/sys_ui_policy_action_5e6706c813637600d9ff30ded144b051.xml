@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <disabled>ignore</disabled>
+        <field>business_approval</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-06-19 15:34:28</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>5e6706c813637600d9ff30ded144b051</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>business_approval</sys_name>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sys_ui_policy_action_5e6706c813637600d9ff30ded144b051</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-06-19 15:34:28</sys_updated_on>
+        <table>x_prole_software_c_software_change_task</table>
+        <ui_policy display_value="Business Approval">87ba75c413237600d9ff30ded144b0de</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+</record_update>
