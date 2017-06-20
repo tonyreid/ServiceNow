@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="Software Change Request" max_length="40" name="x_prole_software_c_software_change_request_table" sizeclass="8" type="collection">
+    <element audit="true" extends="task" label="Software Change Request" max_length="40" name="x_prole_software_c_software_change_request_table" sizeclass="13" type="collection">
         <element label="Affected CI(s)" max_length="4000" name="affected_ci" reference_qual="sys_class_name=cmdb_ci_appl^EQ" reference_qual_condition="sys_class_name=cmdb_ci_appl^EQ" type="string"/>
         <element label="Business Approval" max_length="4000" name="business_approval" reference="sys_user" reference_qual="active=true^user_nameNOT LIKEadmin^EQ" reference_qual_condition="active=true^user_nameNOT LIKEadmin^EQ" type="glide_list"/>
         <element choice="1" label="Category" mandatory="true" max_length="40" name="category" type="choice">
@@ -39,9 +39,9 @@
             </choice>
         </element>
         <element label="Deadline Date" max_length="40" name="deadline_date" type="glide_date_time"/>
-        <element label="Deployment End" max_length="40" name="deployment_end" type="glide_date_time"/>
+        <element label="Deployment End" max_length="40" name="deployment_end" read_only="true" type="glide_date_time"/>
         <element label="Deployment Notes" max_length="4000" name="deployment_notes" type="string"/>
-        <element label="Deployment Start" max_length="40" name="deployment_start" type="glide_date_time"/>
+        <element label="Deployment Start" max_length="40" name="deployment_start" read_only="true" type="glide_date_time"/>
         <element label="Development Team" mandatory="true" max_length="32" name="development_team" reference="sys_user_group" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="reference"/>
         <element choice="1" label="Financial Impact" mandatory="true" max_length="40" name="financial_impact" type="choice">
             <choice>
@@ -60,9 +60,9 @@
         <element label="Prod Deployment Issues" max_length="40" name="prod_deployment_issues" type="integer"/>
         <element label="Prod Deplyoment Notes" max_length="4000" name="prod_deplyoment_notes" type="journal_input"/>
         <element label="Project Sponsor" mandatory="true" max_length="128" name="project_sponsor" reference="sys_user" reference_qual="active=true^nameNOT LIKEadmin^EQ" reference_qual_condition="active=true^nameNOT LIKEadmin^EQ" type="reference"/>
-        <element label="QA End" max_length="40" name="qa_end" type="glide_date_time"/>
+        <element label="QA End" max_length="40" name="qa_end" read_only="true" type="glide_date_time"/>
         <element label="QA Lead" mandatory="true" max_length="32" name="qa_lead" reference="sys_user" reference_qual="active=true^user_nameNOT LIKEadmin^department=b744df4f13107640d9ff30ded144b051^EQ" reference_qual_condition="active=true^user_nameNOT LIKEadmin^department=b744df4f13107640d9ff30ded144b051^EQ" type="reference"/>
-        <element label="QA Start" max_length="40" name="qa_start" type="glide_date_time"/>
+        <element label="QA Start" max_length="40" name="qa_start" read_only="true" type="glide_date_time"/>
         <element label="RC Branch" max_length="128" name="rc_branch" type="string"/>
         <element label="RC Deployments" max_length="40" name="rc_deployments" type="integer"/>
         <element label="Estimated RC Entry" mandatory="true" max_length="40" name="rc_entry" type="glide_date"/>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sysevent_email_template">
+    <sysevent_email_template action="INSERT_OR_UPDATE">
+        <collection>x_prole_software_c_software_change_request_table</collection>
+        <email_layout/>
+        <message/>
+        <message_html><![CDATA[<p class="p1">BEGIN:VCALENDAR</p>
+<p class="p1">PRODID:-//Service-now.com//Outlook 11.0 MIMEDIR//EN</p>
+<p class="p1">VERSION:2.0</p>
+<p class="p1">METHOD:REQUEST</p>
+<p class="p1">BEGIN:VEVENT</p>
+<p class="p1">ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE:MAILTO:${to}</p>
+<p class="p1">ORGANIZER:MAILTO:${from}</p>
+<p class="p1">DTSTART:${dtstart}</p>
+<p class="p1">DTEND:${dtend}</p>
+<p class="p1">LOCATION:${location}</p>
+<p class="p1">TRANSP:OPAQUE</p>
+<p class="p1">SEQUENCE:${sys_mod_count}</p>
+<p class="p1">UID:${number}</p>
+<p class="p1">DTSTAMP:${dtstamp}</p>
+<p class="p1">DESCRIPTION:${description}</p>
+<p class="p1">SUMMARY:${summary}</p>
+<p class="p1">PRIORITY:3</p>
+<p class="p1">X-MICROSOFT-CDO-IMPORTANCE:${priority}</p>
+<p class="p1">STATUS:CONFIRMED</p>
+<p class="p1">CLASS:PUBLIC</p>
+<p class="p1">END:VEVENT</p>
+<p class="p1">END:VCALENDAR</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>ccsx.calendar.integration</name>
+        <sms_alternate/>
+        <subject>SPECIAL CASE TEMPLATE -- Push changes into an outlook calendar</subject>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-06-19 18:45:21</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>56b27a0813233600ce8b7d576144b08a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ccsx.calendar.integration</sys_name>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sysevent_email_template_56b27a0813233600ce8b7d576144b08a</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-06-19 18:45:21</sys_updated_on>
+        <sys_version>2</sys_version>
+    </sysevent_email_template>
+</record_update>

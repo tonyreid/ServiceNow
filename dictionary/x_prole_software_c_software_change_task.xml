@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="Software Change Task" max_length="40" name="x_prole_software_c_software_change_task" sizeclass="59" type="collection">
+    <element audit="true" extends="task" label="Software Change Task" max_length="40" name="x_prole_software_c_software_change_task" sizeclass="93" type="collection">
         <element label="Affected CI's" max_length="4000" name="affected_ci" reference="cmdb_ci" type="glide_list"/>
         <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Business Approval" max_length="1024" name="business_approval" reference="sys_user" type="glide_list"/>
         <element label="RC Branch" max_length="80" name="rc_branch" type="string"/>
