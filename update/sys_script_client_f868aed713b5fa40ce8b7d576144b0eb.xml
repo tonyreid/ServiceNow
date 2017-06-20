@@ -12,7 +12,7 @@
         <order/>
         <script><![CDATA[function onLoad() {
 	//Type appropriate comment here, and begin script below
-	if(g_user.hasRole('change_management')){
+	if(g_user.hasRole('change_manager')){
 		g_form.setReadOnly('priority', false);
 		g_form.setReadOnly('business_approval', false);
 		g_form.setReadOnly('rc_branch', false);
@@ -31,11 +31,11 @@
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-03 20:38:38</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f868aed713b5fa40ce8b7d576144b0eb</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Change Managment  - RO</sys_name>
         <sys_overrides/>
         <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
@@ -44,7 +44,7 @@
         <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
         <sys_update_name>sys_script_client_f868aed713b5fa40ce8b7d576144b0eb</sys_update_name>
         <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-        <sys_updated_on>2017-04-03 20:38:38</sys_updated_on>
+        <sys_updated_on>2017-06-20 14:09:22</sys_updated_on>
         <table>x_prole_software_c_software_change_request_table</table>
         <type>onLoad</type>
         <ui_type>10</ui_type>
