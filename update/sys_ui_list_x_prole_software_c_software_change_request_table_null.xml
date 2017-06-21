@@ -118,11 +118,11 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>sn_admin.tony.reid</sys_created_by>
-            <sys_created_on>2017-04-05 19:45:34</sys_created_on>
-            <sys_customer_update>false</sys_customer_update>
+            <sys_created_on>2017-06-21 15:51:49</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>1fb1740813c6fe40ce8b7d576144b07b</sys_id>
+            <sys_id>79ae90b413ebf600d9ff30ded144b087</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_prole_software_c_software_change_request_table</sys_name>
             <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
@@ -131,8 +131,8 @@
             <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
             <sys_update_name>sys_ui_list_x_prole_software_c_software_change_request_table_null</sys_update_name>
             <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-            <sys_updated_on>2017-04-05 19:45:34</sys_updated_on>
-            <sys_user/>
+            <sys_updated_on>2017-06-21 15:51:49</sys_updated_on>
+            <sys_user display_value="SN Admin Tony Reid">b125483613d5f200ce8b7d576144b022</sys_user>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
         </sys_ui_list>

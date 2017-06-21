@@ -77,7 +77,6 @@
                 <element label="Pipeline" sequence="10" value="1"/>
                 <element label="Ready for RC" sequence="20" value="2"/>
                 <element label="Accepted into RC" sequence="30" value="3"/>
-                <element label="Ready for RC Database Deployment" sequence="40" value="4"/>
                 <element label="Ready for RC Deployment" sequence="50" value="5"/>
                 <element label="RC Testing" sequence="60" value="6"/>
                 <element label="Production Sign-Off Needed" sequence="70" value="7"/>
