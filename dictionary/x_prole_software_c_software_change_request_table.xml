@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="Software Change Request" max_length="40" name="x_prole_software_c_software_change_request_table" sizeclass="13" type="collection">
+    <element audit="true" extends="task" label="Software Change Request" max_length="40" name="x_prole_software_c_software_change_request_table" sizeclass="16" type="collection">
         <element label="Affected CI(s)" max_length="4000" name="affected_ci" reference_qual="sys_class_name=cmdb_ci_appl^EQ" reference_qual_condition="sys_class_name=cmdb_ci_appl^EQ" type="string"/>
         <element label="Business Approval" max_length="4000" name="business_approval" reference="sys_user" reference_qual="active=true^user_nameNOT LIKEadmin^EQ" reference_qual_condition="active=true^user_nameNOT LIKEadmin^EQ" type="glide_list"/>
         <element choice="1" label="Category" mandatory="true" max_length="40" name="category" type="choice">
@@ -74,15 +74,16 @@
         <element label="Planned Start Date" max_length="40" name="start_date" type="glide_date_time"/>
         <element choice="3" default="1" label="Status" max_length="40" name="status" read_only="true" type="choice">
             <choice>
-                <element label="Pipeline" sequence="10" value="1"/>
-                <element label="Ready for RC" sequence="20" value="2"/>
-                <element label="Accepted into RC" sequence="30" value="3"/>
-                <element label="Ready for RC Deployment" sequence="50" value="5"/>
-                <element label="RC Testing" sequence="60" value="6"/>
-                <element label="Production Sign-Off Needed" sequence="70" value="7"/>
-                <element label="Scheduled for Deployment" sequence="80" value="8"/>
-                <element label="Deployed to Production" sequence="90" value="9"/>
-                <element label="Failed / Rolled Back" sequence="100" value="10"/>
+                <element label="Pipeline" sequence="0" value="1"/>
+                <element label="Ready for RC" sequence="1" value="2"/>
+                <element label="Accepted into RC" sequence="2" value="3"/>
+                <element label="Ready for RC Deployment" sequence="3" value="5"/>
+                <element label="RC Testing" sequence="4" value="6"/>
+                <element label="Production Sign-Off Needed" sequence="5" value="7"/>
+                <element label="Scheduled for Deployment" sequence="6" value="8"/>
+                <element label="Deployed to Production" sequence="7" value="9"/>
+                <element label="Failed / Rolled Back" sequence="8" value="10"/>
+                <element label="Canceled" sequence="9" value="11"/>
             </choice>
         </element>
     </element>

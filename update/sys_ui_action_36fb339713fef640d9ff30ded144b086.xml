@@ -48,7 +48,7 @@ gs.addInfoMessage(current.number + " created.");
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-05-23 19:38:35</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>36fb339713fef640d9ff30ded144b086</sys_id>

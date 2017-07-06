@@ -47,7 +47,7 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-06-19 16:06:41</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>dceeca8813a37600d9ff30ded144b0bc</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>QA Start</sys_name>

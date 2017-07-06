@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
-        <action_name>sysverb_update_and_stay</action_name>
+        <action_name/>
         <active>true</active>
         <client>false</client>
-        <comments>Saves an existing record and redirects back to current screen (context version)</comments>
-        <condition>current.canWrite()</condition>
+        <comments/>
+        <condition>gs.hasRole('change_manager') &amp;&amp; current.status != 11</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
-        <form_context_menu>false</form_context_menu>
+        <form_context_menu>true</form_context_menu>
         <form_link>false</form_link>
-        <hint>Save record and remain here</hint>
+        <hint/>
         <list_action>false</list_action>
         <list_banner_button>false</list_banner_button>
         <list_button>false</list_button>
@@ -18,35 +18,40 @@
         <list_context_menu>false</list_context_menu>
         <list_link>false</list_link>
         <list_save_with_form_button>false</list_save_with_form_button>
-        <name>Save</name>
+        <name>Cancel Change</name>
         <onclick/>
-        <order>0</order>
-        <script><![CDATA[action.setRedirectURL(current);
-current.update();
-if (! current.isActionAborted())
-    action.setRedirectURL(current);
-]]></script>
-        <show_insert>true</show_insert>
+        <order>100</order>
+        <script><![CDATA[moveToCancel();
+
+function moveToCancel(){
+	action.setRedirectURL(current);
+	current.status = 11;
+	current.active = 'false';
+	current.update();
+
+	
+}]]></script>
+        <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
-        <sys_created_on>2017-06-19 15:42:17</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_created_on>2017-07-06 15:05:48</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>4958028c13637600d9ff30ded144b02b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Save</sys_name>
+        <sys_id>fc6221ed133ff640d9ff30ded144b084</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Cancel Change</sys_name>
         <sys_overrides/>
         <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
-        <sys_update_name>sys_ui_action_4958028c13637600d9ff30ded144b02b</sys_update_name>
+        <sys_update_name>sys_ui_action_fc6221ed133ff640d9ff30ded144b084</sys_update_name>
         <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-        <sys_updated_on>2017-06-19 15:42:17</sys_updated_on>
+        <sys_updated_on>2017-07-06 15:42:09</sys_updated_on>
         <table>x_prole_software_c_software_change_request_table</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

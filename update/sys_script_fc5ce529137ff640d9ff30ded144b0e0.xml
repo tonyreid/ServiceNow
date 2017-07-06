@@ -4,9 +4,9 @@
         <abort_action>false</abort_action>
         <access>package_private</access>
         <action_delete>false</action_delete>
-        <action_insert>true</action_insert>
+        <action_insert>false</action_insert>
         <action_query>false</action_query>
-        <action_update>false</action_update>
+        <action_update>true</action_update>
         <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
@@ -16,10 +16,12 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition/>
+        <filter_condition table="x_prole_software_c_software_change_request_table">statusCHANGESTO11^EQ<item endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="false" value="11"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>Add CAB Agenda Item</name>
+        <name>Cancel active workflows</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -29,42 +31,29 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
 	// Add your code here
-	
-	var rc = current.rc_entry;
-	var gr = new GlideRecord('cab_meeting');
-	gr.addEncodedQuery('cab_definition=340320fe13167200d9ff30ded144b07d' );
-	gr.addEncodedQuery('change_range_start<='+rc);
-	gr.addEncodedQuery('change_range_end>='+rc);
-	gr.query();
-	while(gr.next()){
-		var item = new GlideRecord('cab_agenda_item');
-		item.insert();
-		item.cab_meeting = gr.sys_id;
-		item.task = current.sys_id;
-		item.update();
-	}
-	
+new global.Workflow().cancel(current);
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
-        <sys_created_on>2017-04-26 20:17:09</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_created_on>2017-07-06 15:43:07</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>d23285fe13967200d9ff30ded144b05d</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>Add CAB Agenda Item</sys_name>
+        <sys_id>fc5ce529137ff640d9ff30ded144b0e0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Cancel active workflows</sys_name>
         <sys_overrides/>
         <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
-        <sys_update_name>sys_script_d23285fe13967200d9ff30ded144b05d</sys_update_name>
+        <sys_update_name>sys_script_fc5ce529137ff640d9ff30ded144b0e0</sys_update_name>
         <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-        <sys_updated_on>2017-05-01 15:09:11</sys_updated_on>
+        <sys_updated_on>2017-07-06 15:45:46</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=d23285fe13967200d9ff30ded144b05d"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=fc5ce529137ff640d9ff30ded144b0e0"/>
 </record_update>

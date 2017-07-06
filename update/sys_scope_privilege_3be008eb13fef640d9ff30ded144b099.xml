@@ -7,7 +7,7 @@
         <sys_class_name>sys_scope_privilege</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-05-23 19:58:10</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>3be008eb13fef640d9ff30ded144b099</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>ClientDateTimeUtils</sys_name>

@@ -38,7 +38,7 @@
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-05-23 19:42:52</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>30acff9713fef640d9ff30ded144b0f4</sys_id>

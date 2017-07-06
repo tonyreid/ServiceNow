@@ -6,7 +6,7 @@
         <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-05-15 18:16:15</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>a4ec52fc13767a00d9ff30ded144b0ff</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>CAB Workbench.cab_workbench_form_ccsx</sys_name>
