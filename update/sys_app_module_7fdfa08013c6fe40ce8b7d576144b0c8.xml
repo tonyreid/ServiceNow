@@ -16,7 +16,7 @@
         <mobile_view_name>Mobile</mobile_view_name>
         <name/>
         <order>10</order>
-        <override_menu_roles>false</override_menu_roles>
+        <override_menu_roles>true</override_menu_roles>
         <query/>
         <report/>
         <roles/>
@@ -25,11 +25,11 @@
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>sn_admin.tony.reid</sys_created_by>
         <sys_created_on>2017-04-05 19:37:49</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7fdfa08013c6fe40ce8b7d576144b0c8</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Software Change Requests</sys_name>
         <sys_overrides/>
         <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
@@ -38,7 +38,7 @@
         <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
         <sys_update_name>sys_app_module_7fdfa08013c6fe40ce8b7d576144b0c8</sys_update_name>
         <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
-        <sys_updated_on>2017-04-05 19:39:11</sys_updated_on>
+        <sys_updated_on>2017-07-07 20:24:25</sys_updated_on>
         <timeline_page/>
         <title>Software Change Requests</title>
         <uncancelable>false</uncancelable>

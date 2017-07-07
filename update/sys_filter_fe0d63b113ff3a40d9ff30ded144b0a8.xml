@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_filter">
+    <sys_filter action="INSERT_OR_UPDATE">
+        <filter table="sys_user">nameLIKE^nameISNOTEMPTY^EQ<item endquery="false" field="name" goto="false" newquery="false" operator="LIKE" or="false" value=""/>
+            <item endquery="false" field="name" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <group/>
+        <last_used>2017-07-07 20:12:47</last_used>
+        <mobile>true</mobile>
+        <roles/>
+        <sys_class_name>sys_filter</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-07-07 19:43:10</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fe0d63b113ff3a40d9ff30ded144b0a8</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>mobile</sys_name>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_update_name>sys_filter_fe0d63b113ff3a40d9ff30ded144b0a8</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-07-07 20:12:47</sys_updated_on>
+        <table>sys_user</table>
+        <title>mobile</title>
+        <user display_value="SN Admin Tony Reid">b125483613d5f200ce8b7d576144b022</user>
+    </sys_filter>
+</record_update>

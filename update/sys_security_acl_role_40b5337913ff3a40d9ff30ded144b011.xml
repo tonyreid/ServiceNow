@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>sn_admin.tony.reid</sys_created_by>
+        <sys_created_on>2017-07-07 20:21:20</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>40b5337913ff3a40d9ff30ded144b011</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.change_manager</sys_name>
+        <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+        <sys_security_acl display_value="x_prole_software_c_software_change_request_table.status">9fa5b77913ff3a40d9ff30ded144b0d4</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_40b5337913ff3a40d9ff30ded144b011</sys_update_name>
+        <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+        <sys_updated_on>2017-07-07 20:21:20</sys_updated_on>
+        <sys_user_role display_value="change_manager" name="change_manager">ca55cd759f2002002920bde8132e70b4</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="vtb_card" version="2" view="RPT5acce73113ff3a40d9ff30ded144b0e9">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>board</element>
+            <list_id display_value="vtb_card" element="NULL" name="vtb_card" parent="NULL" relationship="NULL" sys_domain="global" view="9acce73113ff3a40d9ff30ded144b0ed">00dc2b3113ff3a40d9ff30ded144b0b0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-07-07 19:42:09</sys_created_on>
+            <sys_id>c4dc2b3113ff3a40d9ff30ded144b0b0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-07-07 19:42:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>lane</element>
+            <list_id display_value="vtb_card" element="NULL" name="vtb_card" parent="NULL" relationship="NULL" sys_domain="global" view="9acce73113ff3a40d9ff30ded144b0ed">00dc2b3113ff3a40d9ff30ded144b0b0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-07-07 19:42:09</sys_created_on>
+            <sys_id>48dc2b3113ff3a40d9ff30ded144b0b0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-07-07 19:42:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>task</element>
+            <list_id display_value="vtb_card" element="NULL" name="vtb_card" parent="NULL" relationship="NULL" sys_domain="global" view="9acce73113ff3a40d9ff30ded144b0ed">00dc2b3113ff3a40d9ff30ded144b0b0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-07-07 19:42:09</sys_created_on>
+            <sys_id>c8dc2b3113ff3a40d9ff30ded144b0b0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-07-07 19:42:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>order</element>
+            <list_id display_value="vtb_card" element="NULL" name="vtb_card" parent="NULL" relationship="NULL" sys_domain="global" view="9acce73113ff3a40d9ff30ded144b0ed">00dc2b3113ff3a40d9ff30ded144b0b0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-07-07 19:42:09</sys_created_on>
+            <sys_id>4cdc2b3113ff3a40d9ff30ded144b0b0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-07-07 19:42:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>removed</element>
+            <list_id display_value="vtb_card" element="NULL" name="vtb_card" parent="NULL" relationship="NULL" sys_domain="global" view="9acce73113ff3a40d9ff30ded144b0ed">00dc2b3113ff3a40d9ff30ded144b0b0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-07-07 19:42:09</sys_created_on>
+            <sys_id>ccdc2b3113ff3a40d9ff30ded144b0b0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-07-07 19:42:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>vtb_card</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>sn_admin.tony.reid</sys_created_by>
+            <sys_created_on>2017-07-07 19:42:09</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>00dc2b3113ff3a40d9ff30ded144b0b0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>vtb_card</sys_name>
+            <sys_package display_value="Software Change Request" source="x_prole_software_c">ae55d25b1335fa40ce8b7d576144b0e7</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Software Change Request">ae55d25b1335fa40ce8b7d576144b0e7</sys_scope>
+            <sys_update_name>sys_ui_list_vtb_card_RPT5acce73113ff3a40d9ff30ded144b0e9</sys_update_name>
+            <sys_updated_by>sn_admin.tony.reid</sys_updated_by>
+            <sys_updated_on>2017-07-07 19:42:09</sys_updated_on>
+            <sys_user/>
+            <view display_value="Rpt5acce73113ff3a40d9ff30ded144b0e9" name="RPT5acce73113ff3a40d9ff30ded144b0e9">9acce73113ff3a40d9ff30ded144b0ed</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>
